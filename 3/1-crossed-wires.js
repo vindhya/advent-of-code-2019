@@ -79,7 +79,7 @@ const getIntersections = (coords1, coords2) => {
 const intersections = getIntersections(wire1Coords, wire2Coords);
 
 const getClosest = inter => {
-  const first = inter[0][0] + inter[0][1];
+  const first = Math.abs(inter[0][0]) + Math.abs(inter[0][1]);
   return intersections.reduce((acc, curr) => {
     const sum = Math.abs(curr[0]) + Math.abs(curr[1]);
     return sum < acc ? sum : acc;
